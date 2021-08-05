@@ -37,6 +37,19 @@ document.addEventListener('scroll', () => {
   home.style.opacity = opacity;
 });
 
+// Scroll to the top when arrow button is clicked
+const arrow = document.querySelector('.up__arrow');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrow.classList.add('active');
+  } else {
+    arrow.classList.remove('active');
+  }
+});
+arrow.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
