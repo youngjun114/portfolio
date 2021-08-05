@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
+    <script src="/src/main.js" type="module" defer></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -30,7 +30,7 @@
         <a href="/">Youngjun Woo</a>
       </div>
       <ul class="navbar__right">
-        <li class="navbar__menu-item active" data-link="#home">Home</li>
+        <li class="navbar__menu-item" data-link="#home">Home</li>
         <li class="navbar__menu-item" data-link="#about">About</li>
         <li class="navbar__menu-item" data-link="#skills">Skills</li>
         <li class="navbar__menu-item" data-link="#work">My Work</li>
@@ -179,75 +179,110 @@
         <h1>My Work</h1>
         <h2>Projects</h2>
         <div class="work__categories">
-          <button class="category__btn active">All</button>
-          <button class="category__btn">Front-End</button>
-          <button class="category__btn">Back-End</button>
+          <button class="category__btn selected" data-filter="*">All</button>
+          <button class="category__btn" data-filter="front-end">
+            Front-End
+          </button>
+          <button class="category__btn" data-filter="back-end">Back-End</button>
         </div>
         <div class="work__projects">
-          <a href="#" class="project">
+          <a
+            data-type="front-end back-end"
+            href="https://github.com/youngjun114/twitter"
+            class="project"
+          >
             <img
-              src="/images/profile.jpeg"
-              alt="project"
+              src="/images/projects/twitter-clone.png"
+              alt="twitter"
               class="project__image"
             />
             <div class="project__desc">
-              <h3>Project Name Here</h3>
-              <span>Project desc here</span>
+              <h3>Twitter Clone</h3>
+              <span>Twitter clone using MERN stack</span>
             </div>
           </a>
-          <a href="#" class="project">
+          <a
+            data-type="front-end"
+            href="https://github.com/youngjun114/youtube-revised"
+            class="project"
+          >
             <img
-              src="/images/profile.jpeg"
-              alt="project"
+              src="/images/projects/youtube-clone.png"
+              alt="youtube"
               class="project__image"
             />
             <div class="project__desc">
-              <h3>Project Name Here</h3>
-              <span>Project desc here</span>
+              <h3>Youtube Clone</h3>
+              <span>Youtube clone using React JS and Youtube API</span>
             </div>
           </a>
-          <a href="#" class="project">
+          <a
+            data-type="front-end"
+            href="https://github.com/youngjun114/netflix-clone"
+            class="project"
+          >
             <img
-              src="/images/profile.jpeg"
-              alt="project"
+              src="/images/projects/netflix-clone.png"
+              alt="netflix"
               class="project__image"
             />
             <div class="project__desc">
-              <h3>Project Name Here</h3>
-              <span>Project desc here</span>
+              <h3>Netflix Clone</h3>
+              <span
+                >Netflix clone using React JS and TMDB API and Firebase
+                Authentication</span
+              >
             </div>
           </a>
-          <a href="#" class="project">
+          <a
+            data-type="front-end back-end"
+            href="https://github.com/youngjun114/card-maker"
+            class="project"
+          >
             <img
-              src="/images/profile.jpeg"
-              alt="project"
+              src="/images/projects/card-maker.png"
+              alt="card-maker"
               class="project__image"
             />
             <div class="project__desc">
-              <h3>Project Name Here</h3>
-              <span>Project desc here</span>
+              <h3>Business Card Maker</h3>
+              <span
+                >Card maker using React JS, Firebase Realtime Database, Firebase
+                Authentication, and Cloudinary</span
+              >
             </div>
           </a>
-          <a href="#" class="project">
+          <a
+            data-type="front-end"
+            href="https://github.com/youngjun114/gallery"
+            class="project"
+          >
             <img
-              src="/images/profile.jpeg"
-              alt="project"
+              src="/images/projects/web-design.png"
+              alt="web-design"
               class="project__image"
             />
             <div class="project__desc">
-              <h3>Project Name Here</h3>
-              <span>Project desc here</span>
+              <h3>Web Design</h3>
+              <span>Simple web design with React</span>
             </div>
           </a>
-          <a href="#" class="project">
+          <a
+            data-type="front-end"
+            href="https://github.com/youngjun114/javscript/tree/main/carrot-game"
+            class="project"
+          >
             <img
-              src="/images/profile.jpeg"
-              alt="project"
+              src="/images/projects/carrot-game.png"
+              alt="carrot-game"
               class="project__image"
             />
             <div class="project__desc">
-              <h3>Project Name Here</h3>
-              <span>Project desc here</span>
+              <h3>Carrot Game</h3>
+              <span
+                >Finding carrot game with HTML, CSS, and Vanilla
+                Javascript</span
+              >
             </div>
           </a>
         </div>

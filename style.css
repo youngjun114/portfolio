@@ -11,6 +11,7 @@
   --color-primary-blue: hsl(216, 64%, 37%);
   --color-primary-blue-rgba: rgba(34, 82, 155, 0.9);
   --color-primary-blue-hover: hsl(216, 64%, 60%);
+  --color-primary-blue-hover-dark: hsl(216, 64%, 27%);
   --color-primary-blue-bg: hsl(216, 64%, 95%);
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
@@ -150,16 +151,15 @@ span {
 
 .navbar__menu-item {
   padding: 8px 0;
+  margin: 0 4px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
-}
-
-.navbar__menu-item.active {
-  border: 1px solid var(--color-white);
+  border: 1px solid transparent;
 }
 
 .navbar__menu-item:hover {
-  background-color: var(--color-primary-blue-hover);
+  background-color: var(--color-primary-blue-hover-dark);
+  border-color: var(--color-white);
 }
 
 .navbar__toggle-btn {
@@ -356,7 +356,7 @@ span {
   padding: 8px 48px;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-primary-blue-hover);
   color: var(--color-white);
@@ -366,17 +366,27 @@ span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration-short) ease-out;
+}
+.work__projects.anim-out {
+  opacity: 0.6;
+  transform: scale(0.95) translateY(40px);
 }
 
 .project {
   position: relative;
-  width: 280px;
-  height: 250px;
+  width: 350px;
+  height: auto;
   margin: 2px;
   background-color: var(--color-light-white);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__image {
@@ -395,6 +405,7 @@ span {
   top: 0;
   left: 0;
   opacity: 0;
+  padding: 0 4px;
   transform: translateY(50%);
   transition: all var(--animation-duration-long) ease;
 }
