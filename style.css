@@ -41,7 +41,7 @@
   --weight-regular: 400;
 
   /* Size */
-  --size-navbar-height: 80px;
+  --size-navbar-height: 70px;
   --size-border-radius: 4px;
 
   /* Animation */
@@ -132,7 +132,7 @@ span {
 }
 
 #navbar.active {
-  background-color: var(--color-primary-blue-rgba);
+  background-color: var(--color-primary-blue);
 }
 
 .navbar__left {
@@ -178,6 +178,7 @@ span {
   background: center/cover no-repeat url('/images/home-background.png');
   padding: 120px 40px 200px 40px;
   text-align: center;
+  transition: opacity var(--animation-duration-long) ease-in;
 }
 
 .home__avatar {
