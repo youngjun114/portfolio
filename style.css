@@ -43,7 +43,8 @@
   --size-border-radius: 4px;
 
   /* Animation */
-  --animation-duration: 300ms;
+  --animation-duration-short: 300ms;
+  --animation-duration-long: 500ms;
 }
 
 html {
@@ -185,7 +186,7 @@ span {
   color: var(--color-white);
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
-  transition: all var(--animation-duration) ease;
+  transition: all var(--animation-duration-short) ease;
 }
 
 .home__contact:hover {
@@ -225,7 +226,7 @@ span {
 }
 
 .major__icon i {
-  transition: all var(--animation-duration) ease;
+  transition: all var(--animation-duration-short) ease;
 }
 
 .major__icon:hover i {
@@ -377,11 +378,13 @@ span {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: all var(--animation-duration) ease;
+  transform: translateY(50%);
+  transition: all var(--animation-duration-long) ease;
 }
 
 .project:hover .project__desc {
   opacity: 0.8;
+  transform: translateY(0px);
 }
 
 .project__desc h3 {
@@ -397,4 +400,33 @@ span {
   height: 2px;
   background-color: var(--color-dark-white);
   margin-top: 8px;
+}
+
+/* Contact */
+#contact {
+  background-color: var(--color-primary-blue);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin-bottom: 30px;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  color: var(--color-white);
+  margin: 24px 0;
+}
+
+.contact__links i {
+  transition: all var(--animation-duration-short) ease;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
 }
