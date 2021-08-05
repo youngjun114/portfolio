@@ -9,7 +9,8 @@
 :root {
   /* Color */
   --color-primary-blue: hsl(216, 64%, 37%);
-  --color-primary-blue-hover: hsl(216, 64%, 50%);
+  --color-primary-blue-hover: hsl(216, 64%, 60%);
+  --color-primary-blue-bg: hsl(216, 64%, 95%);
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
@@ -105,6 +106,7 @@ p {
 span {
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
+  color: var(--color-white);
 }
 
 /* Navbar */
@@ -239,10 +241,12 @@ span {
 .college {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .college__image {
-  width: 240px;
+  object-fit: contain;
+  height: 140px;
 }
 
 .college__desc {
@@ -266,7 +270,7 @@ span {
 
 /* Skill */
 #skills {
-  background-color: var(--color-yellow);
+  background-color: var(--color-primary-blue-bg);
 }
 
 .skillset {
@@ -307,9 +311,90 @@ span {
 
 .skill__value {
   height: 3px;
-  background-color: white;
+  background: #2aacef;
+  background: -webkit-linear-gradient(top left, #2aacef, #e38bab);
+  background: -moz-linear-gradient(top left, #2aacef, #e38bab);
+  background: linear-gradient(to bottom right, #2aacef, #e38bab);
+  /* background: #12ee08;
+  background: -webkit-linear-gradient(top left, #12ee08, #da1976);
+  background: -moz-linear-gradient(top left, #12ee08, #da1976);
+  background: linear-gradient(to bottom right, #12ee08, #da1976); */
 }
 
 .tools {
   padding: 20px;
+}
+
+/* Work */
+
+.work__categories {
+  margin: 40px;
+}
+
+.category__btn {
+  border: 1px solid var(--color-dark-white);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  padding: 8px 48px;
+}
+
+.category__btn.active,
+.category__btn:hover {
+  background-color: var(--color-primary-blue-hover);
+  color: var(--color-white);
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  position: relative;
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: var(--color-light-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.project__desc {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-black);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all var(--animation-duration) ease;
+}
+
+.project:hover .project__desc {
+  opacity: 0.8;
+}
+
+.project__desc h3 {
+  color: var(--color-white);
+}
+.project__desc h3::after {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-dark-white);
+  margin-top: 8px;
 }
