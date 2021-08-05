@@ -30,12 +30,15 @@
         <a href="/">Youngjun Woo</a>
       </div>
       <ul class="navbar__right">
-        <li class="navbar__menu-item active">Home</li>
-        <li class="navbar__menu-item">About</li>
-        <li class="navbar__menu-item">Skills</li>
-        <li class="navbar__menu-item">My Work</li>
-        <li class="navbar__menu-item">Contact</li>
+        <li class="navbar__menu-item active" data-link="#home">Home</li>
+        <li class="navbar__menu-item" data-link="#about">About</li>
+        <li class="navbar__menu-item" data-link="#skills">Skills</li>
+        <li class="navbar__menu-item" data-link="#work">My Work</li>
+        <li class="navbar__menu-item" data-link="#contact">Contact</li>
       </ul>
+      <button class="navbar__toggle-btn">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
 
     <!-- Home -->
@@ -90,7 +93,9 @@
             <h3 class="college__desc-name">
               California State Polytechnic University Pomona
             </h3>
-            <p class="college_period"><i class="far fa-calendar-alt"></i></p>
+            <p class="college_period">
+              <i class="far fa-calendar-alt"></i> 2015 - 2020
+            </p>
           </div>
         </div>
       </div>
@@ -168,80 +173,82 @@
     </section>
     <!-- Work -->
     <section id="work" class="section">
-      <h1>My Work</h1>
-      <h2>Projects</h2>
-      <div class="work__categories">
-        <button class="category__btn active">All</button>
-        <button class="category__btn">Front-End</button>
-        <button class="category__btn">Back-End</button>
-      </div>
-      <div class="work__projects">
-        <a href="#" class="project">
-          <img
-            src="/images/profile.jpeg"
-            alt="project"
-            class="project__image"
-          />
-          <div class="project__desc">
-            <h3>Project Name Here</h3>
-            <span>Project desc here</span>
-          </div>
-        </a>
-        <a href="#" class="project">
-          <img
-            src="/images/profile.jpeg"
-            alt="project"
-            class="project__image"
-          />
-          <div class="project__desc">
-            <h3>Project Name Here</h3>
-            <span>Project desc here</span>
-          </div>
-        </a>
-        <a href="#" class="project">
-          <img
-            src="/images/profile.jpeg"
-            alt="project"
-            class="project__image"
-          />
-          <div class="project__desc">
-            <h3>Project Name Here</h3>
-            <span>Project desc here</span>
-          </div>
-        </a>
-        <a href="#" class="project">
-          <img
-            src="/images/profile.jpeg"
-            alt="project"
-            class="project__image"
-          />
-          <div class="project__desc">
-            <h3>Project Name Here</h3>
-            <span>Project desc here</span>
-          </div>
-        </a>
-        <a href="#" class="project">
-          <img
-            src="/images/profile.jpeg"
-            alt="project"
-            class="project__image"
-          />
-          <div class="project__desc">
-            <h3>Project Name Here</h3>
-            <span>Project desc here</span>
-          </div>
-        </a>
-        <a href="#" class="project">
-          <img
-            src="/images/profile.jpeg"
-            alt="project"
-            class="project__image"
-          />
-          <div class="project__desc">
-            <h3>Project Name Here</h3>
-            <span>Project desc here</span>
-          </div>
-        </a>
+      <div class="section__container">
+        <h1>My Work</h1>
+        <h2>Projects</h2>
+        <div class="work__categories">
+          <button class="category__btn active">All</button>
+          <button class="category__btn">Front-End</button>
+          <button class="category__btn">Back-End</button>
+        </div>
+        <div class="work__projects">
+          <a href="#" class="project">
+            <img
+              src="/images/profile.jpeg"
+              alt="project"
+              class="project__image"
+            />
+            <div class="project__desc">
+              <h3>Project Name Here</h3>
+              <span>Project desc here</span>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img
+              src="/images/profile.jpeg"
+              alt="project"
+              class="project__image"
+            />
+            <div class="project__desc">
+              <h3>Project Name Here</h3>
+              <span>Project desc here</span>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img
+              src="/images/profile.jpeg"
+              alt="project"
+              class="project__image"
+            />
+            <div class="project__desc">
+              <h3>Project Name Here</h3>
+              <span>Project desc here</span>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img
+              src="/images/profile.jpeg"
+              alt="project"
+              class="project__image"
+            />
+            <div class="project__desc">
+              <h3>Project Name Here</h3>
+              <span>Project desc here</span>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img
+              src="/images/profile.jpeg"
+              alt="project"
+              class="project__image"
+            />
+            <div class="project__desc">
+              <h3>Project Name Here</h3>
+              <span>Project desc here</span>
+            </div>
+          </a>
+          <a href="#" class="project">
+            <img
+              src="/images/profile.jpeg"
+              alt="project"
+              class="project__image"
+            />
+            <div class="project__desc">
+              <h3>Project Name Here</h3>
+              <span>Project desc here</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
     <!-- Contact -->

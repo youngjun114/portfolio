@@ -9,6 +9,7 @@
 :root {
   /* Color */
   --color-primary-blue: hsl(216, 64%, 37%);
+  --color-primary-blue-rgba: rgba(34, 82, 155, 0.9);
   --color-primary-blue-hover: hsl(216, 64%, 60%);
   --color-primary-blue-bg: hsl(216, 64%, 95%);
   --color-white: #ffffff;
@@ -28,6 +29,7 @@
   /* Font size */
   --font-large: 48px;
   --font-medium: 28px;
+  --font-regular-large: 24px;
   --font-regular: 18px;
   --font-small: 16px;
   --font-micro: 14px;
@@ -45,10 +47,6 @@
   /* Animation */
   --animation-duration-short: 300ms;
   --animation-duration-long: 500ms;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 button {
@@ -71,9 +69,14 @@ a:active {
   color: var(--color-primary-white);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   cursor: default;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -115,22 +118,27 @@ span {
 #navbar {
   position: fixed;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: var(--size-navbar-height);
-  font-size: 2.4rem;
-  padding: 0 1em;
+  font-size: var(--font-regular-large);
+  padding: 0 16px;
   color: var(--color-white);
-  background-color: var(--color-primary-blue);
   z-index: 1;
+  transition: all var(--animation-duration-short) ease-in-out;
+}
+
+#navbar.active {
+  background-color: var(--color-primary-blue-rgba);
 }
 
 .navbar__left {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 16px;
 }
 
 .navbar__logo {
@@ -139,11 +147,11 @@ span {
 
 .navbar__right {
   display: flex;
-  gap: 0.5em;
+  gap: 16px;
 }
 
 .navbar__menu-item {
-  padding: 8px 12px;
+  padding: 8px 0;
   cursor: pointer;
   border-radius: var(--size-border-radius);
 }
@@ -156,12 +164,19 @@ span {
   background-color: var(--color-primary-blue-hover);
 }
 
+.navbar__toggle-btn {
+  display: none;
+  position: absolute;
+  right: 24px;
+  color: var(--color-white);
+  font-size: var(--font-medium);
+}
+
 /* Home */
 #home {
   position: relative;
   background: center/cover no-repeat url('/images/home-background.png');
-  margin-top: var(--size-navbar-height);
-  padding: 60px 40px 200px 40px;
+  padding: 120px 40px 200px 40px;
   text-align: center;
 }
 
@@ -329,6 +344,9 @@ span {
 /* Work */
 
 .work__categories {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
   margin: 40px;
 }
 
@@ -429,4 +447,93 @@ span {
 
 .contact__links i:hover {
   transform: scale(1.1);
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: var(--font-medium);
+  }
+
+  h2 {
+    font-size: var(--font-regular);
+  }
+
+  h3 {
+    font-size: var(--font-small);
+  }
+
+  p {
+    font-size: var(--font-small);
+  }
+
+  span {
+    font-size: var(--font-small);
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  .navbar__right {
+    display: none;
+    position: fixed;
+    top: var(--size-navbar-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--color-primary-blue);
+    text-align: center;
+  }
+
+  .navbar__menu-item {
+    padding: 24px 0;
+  }
+
+  .section {
+    padding: 25px;
+  }
+
+  #home {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about__majors {
+    flex-direction: column;
+    margin: 40px 0;
+  }
+
+  .major {
+    margin-top: 38px;
+  }
+
+  .college {
+    flex-direction: column;
+  }
+
+  .college__desc {
+    align-items: center;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .work__categories {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px;
+  }
 }
