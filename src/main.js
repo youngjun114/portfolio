@@ -20,7 +20,14 @@ navbarMenu.addEventListener('click', (e) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove('active');
   scrollIntoView(link);
+});
+
+// navbar button toggle
+const navbarButton = document.querySelector('.navbar__toggle-btn');
+navbarButton.addEventListener('click', () => {
+  navbarMenu.classList.toggle('active');
 });
 
 // Handle scrolling when "contact me" button is clicked
@@ -50,9 +57,15 @@ arrow.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
+// function scrollIntoView(selector) {
+//   const scrollTo = document.querySelector(selector);
+//   scrollTo.scrollIntoView({ behavior: 'smooth' });
+// }
+
 function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
+  const element = document.querySelector(selector);
+  const scrollTo = element.getBoundingClientRect().top - navbarHeight;
+  window.scrollBy({ top: scrollTo, behavior: 'smooth' });
 }
 
 const work = document.querySelector('.work__projects');
