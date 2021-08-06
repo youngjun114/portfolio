@@ -443,9 +443,11 @@ span {
   padding: 0 4px;
   transform: translateY(50%);
   transition: all var(--animation-duration-long) ease;
+  pointer-events: none;
 }
 
 .project:hover .project__desc {
+  pointer-events: initial;
   opacity: 0.8;
   transform: translateY(0px);
 }
@@ -463,6 +465,11 @@ span {
   height: 2px;
   background-color: var(--color-dark-white);
   margin-top: 8px;
+}
+.project__desc i {
+  margin-top: 16px;
+  color: var(--color-white);
+  font-size: var(--font-large);
 }
 
 /* Contact */
