@@ -11,8 +11,10 @@
   --color-primary-blue: hsl(216, 64%, 37%);
   --color-primary-blue-rgba: rgba(34, 82, 155, 0.9);
   --color-primary-blue-hover: hsl(216, 64%, 60%);
+  --color-primary-blue-border: hsl(216, 64%, 80%);
   --color-primary-blue-hover-dark: hsl(216, 64%, 27%);
   --color-primary-blue-bg: hsl(216, 64%, 95%);
+  --color-majors-border: #dddddd;
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
@@ -21,9 +23,14 @@
   --color-light-grey: #7c7979;
   --color-blue: #73aace;
   --color-dark-blue: #01426a;
-  --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+
+  --color-javascript: #f0db4f;
+  --color-html: #e34c26;
+  --color-css: #264de4;
+  --color-node: #3c873a;
+  --color-react: #61dbfb;
 
   /* Font size */
   --font-large: 48px;
@@ -146,7 +153,7 @@ span {
 
 .navbar__right {
   display: flex;
-  gap: 16px;
+  gap: 4px;
 }
 
 .navbar__menu-item {
@@ -154,7 +161,10 @@ span {
   margin: 0 4px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
-  border: 1px solid transparent;
+}
+
+.navbar__menu-item.active {
+  border: 1px solid var(--color-white);
 }
 
 .navbar__menu-item:hover {
@@ -227,16 +237,38 @@ span {
 }
 
 .major__icon {
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
   font-size: 70px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin: auto;
-  border: 2px solid var(--color-primary-blue);
-  color: var(--color-blue);
+  border: 2px solid var(--color-majors-border);
+}
+
+.html {
+  color: var(--color-html);
+}
+
+.css {
+  color: var(--color-css);
+}
+
+.javascript {
+  color: var(--color-javascript);
+}
+
+.node {
+  color: var(--color-node);
+  font-size: 100px;
+}
+
+.react {
+  color: var(--color-react);
+  font-size: 100px;
 }
 
 .major__icon i {
@@ -479,24 +511,15 @@ span {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
-  h1 {
-    font-size: var(--font-medium);
-  }
-
-  h2 {
-    font-size: var(--font-regular);
-  }
-
-  h3 {
-    font-size: var(--font-small);
-  }
-
-  p {
-    font-size: var(--font-small);
-  }
-
-  span {
-    font-size: var(--font-small);
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 24px;
+    --font-regular-large: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+    --logo-size: 30px;
   }
 
   #navbar {
@@ -529,7 +552,7 @@ span {
   }
 
   .section {
-    padding: 25px;
+    padding: 16px;
   }
 
   #home {
@@ -543,7 +566,7 @@ span {
   }
 
   .major {
-    margin-top: 38px;
+    margin: 12px 0;
   }
 
   .college {

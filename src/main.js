@@ -62,12 +62,6 @@ arrow.addEventListener('click', () => {
 //   scrollTo.scrollIntoView({ behavior: 'smooth' });
 // }
 
-function scrollIntoView(selector) {
-  const element = document.querySelector(selector);
-  const scrollTo = element.getBoundingClientRect().top - navbarHeight;
-  window.scrollBy({ top: scrollTo, behavior: 'smooth' });
-}
-
 const work = document.querySelector('.work__projects');
 const categories = document.querySelector('.work__categories');
 const projects = document.querySelectorAll('.project');
@@ -98,4 +92,61 @@ categories.addEventListener('click', (e) => {
     });
     work.classList.remove('anim-out');
   }, 200);
+});
+
+//
+const sectionIds = ['#home', '#about', '#skills', '#work', '#contact'];
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) =>
+  document.querySelector(`[data-link="${id}"]`)
+);
+
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('active');
+  selectedNavItem = selected;
+  selectedNavItem.classList.add('active');
+}
+
+function scrollIntoView(selector) {
+  const element = document.querySelector(selector);
+  const scrollTo = element.getBoundingClientRect().top - navbarHeight;
+  window.scrollBy({ top: scrollTo, behavior: 'smooth' });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2,
+};
+
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersection && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach((section) => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (
+    Math.round(window.scrollY + window.innerHeight) >=
+    document.body.clientHeight
+  ) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
 });
