@@ -371,7 +371,8 @@ span {
   background: linear-gradient(to bottom right, #12ee08, #da1976); */
 }
 
-.tools {
+.tools,
+.experience {
   padding: 20px;
 }
 

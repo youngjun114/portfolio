@@ -57,11 +57,7 @@ arrow.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
-// function scrollIntoView(selector) {
-//   const scrollTo = document.querySelector(selector);
-//   scrollTo.scrollIntoView({ behavior: 'smooth' });
-// }
-
+// filtering & toggling project categories section
 const work = document.querySelector('.work__projects');
 const categories = document.querySelector('.work__categories');
 const projects = document.querySelectorAll('.project');
@@ -94,7 +90,7 @@ categories.addEventListener('click', (e) => {
   }, 200);
 });
 
-//
+// activate navbar when scrolled to the matching section
 const sectionIds = ['#home', '#about', '#skills', '#work', '#contact'];
 const sections = sectionIds.map((id) => document.querySelector(id));
 const navItems = sectionIds.map((id) =>
