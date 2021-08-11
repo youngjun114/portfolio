@@ -326,7 +326,7 @@ span {
 .skillset {
   display: flex;
   color: var(--color-light-white);
-  margin: 20px 0;
+  margin: 40px 0 20px 0;
 }
 
 .skillset__title {
@@ -340,7 +340,7 @@ span {
 }
 
 .skill {
-  margin: 32px 0;
+  margin-bottom: 32px;
 }
 
 .skills_title {

@@ -340,7 +340,7 @@ span {
 }
 
 .skill {
-  margin: 32px 0;
+  margin-bottom: 32px;
 }
 
 .skills_title {
@@ -358,9 +358,10 @@ span {
 }
 
 .skill__bar {
+  text-align: center;
+  width: 75%;
   height: 3px;
   background-color: var(--color-grey);
-  margin: 0 auto;
 }
 
 .skill__value {
